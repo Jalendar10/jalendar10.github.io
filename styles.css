@@ -436,18 +436,27 @@ h4 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spa
 .proj-header h3 { font-size: 0.97rem; color: var(--t1); }
 .proj-desc { font-size: 0.85rem; color: var(--t2); line-height: 1.7; }
 
-/* Architecture Diagram */
-.arch-diagram {
+/* Architecture Diagram — Vertical Flow */
+.arch-diagram-v {
   background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
-  padding: 0.85rem; display: flex; flex-direction: column; gap: 0.5rem;
-  position: relative; overflow: hidden;
+  padding: 0.9rem 1rem; display: flex; flex-direction: column;
+  align-items: stretch; gap: 0.3rem;
 }
+.arch-step {
+  font-size: 0.72rem; font-weight: 600; padding: 0.4rem 0.75rem;
+  border-radius: 7px; border: 1px solid; text-align: center; line-height: 1.4;
+}
+.arch-step.source { background: rgba(79,70,229,0.07); border-color: rgba(79,70,229,0.22); color: var(--accent); }
+.arch-step.engine { background: rgba(3,105,161,0.07); border-color: rgba(3,105,161,0.22); color: var(--cyan); }
+.arch-step.output { background: rgba(22,163,74,0.07); border-color: rgba(22,163,74,0.22); color: var(--green); }
+.arch-step-sep {
+  text-align: center; font-size: 0.8rem; color: var(--t3); line-height: 1;
+  margin: 0.05rem 0;
+}
+/* Legacy horizontal (kept for reference) */
+.arch-diagram { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem; display: flex; flex-direction: column; gap: 0.5rem; overflow: hidden; }
 .arch-row { display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap; }
-.arch-node {
-  font-size: 0.65rem; font-weight: 600; padding: 0.25rem 0.5rem;
-  border-radius: 6px; white-space: normal; word-break: break-word;
-  border: 1px solid; min-width: 0; flex-shrink: 1;
-}
+.arch-node { font-size: 0.65rem; font-weight: 600; padding: 0.25rem 0.5rem; border-radius: 6px; border: 1px solid; min-width: 0; flex-shrink: 1; }
 .arch-node.source { background: rgba(79,70,229,0.07); border-color: rgba(79,70,229,0.2); color: var(--accent); }
 .arch-node.engine { background: rgba(3,105,161,0.07); border-color: rgba(3,105,161,0.2); color: var(--cyan); }
 .arch-node.output { background: rgba(22,163,74,0.07); border-color: rgba(22,163,74,0.2); color: var(--green); }

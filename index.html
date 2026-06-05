@@ -478,8 +478,7 @@
           <p class="section-sub">Production systems, compliance platforms, and AI-powered tooling built and deployed.</p>
         </div>
 
-        <div class="proj-carousel-wrap">
-          <div class="proj-carousel" id="projCarousel" aria-label="Projects carousel">
+        <div class="proj-grid">
 
           <!-- GRC Compliance System -->
           <div class="proj-card reveal">
@@ -493,30 +492,17 @@
               </div>
             </div>
             <p class="proj-desc">
-              TypeScript-based Governance, Risk &amp; Compliance (GRC) automation platform for financial services.
-              Automates compliance workflows, risk assessments, and regulatory reporting pipelines.
-              Designed for AML/BSA regulatory environments with real-time monitoring and alert generation.
+              TypeScript-based Governance, Risk &amp; Compliance platform for financial services.
+              Automates compliance workflows, risk assessments, and SAR/CTR regulatory reporting
+              for AML/BSA environments with real-time monitoring and alert generation.
             </p>
 
-            <!-- Architecture Diagram -->
-            <div class="arch-diagram" role="img" aria-label="GRC System architecture diagram">
-              <div class="arch-row">
-                <div class="arch-node source">Policy &amp; Controls</div>
-                <div class="arch-arrow">→</div>
-                <div class="arch-node engine">Risk Engine</div>
-                <div class="arch-arrow">→</div>
-                <div class="arch-node output">Control Assessment</div>
-              </div>
-              <div class="arch-row">
-                <div class="arch-node source">OFAC / Reg Data</div>
-                <div class="arch-arrow">→</div>
-                <div class="arch-node engine">Compliance Check</div>
-                <div class="arch-arrow">→</div>
-                <div class="arch-node output">SAR / CTR Report</div>
-              </div>
-              <div class="arch-connector" aria-hidden="true">
-                <div class="arch-vline"></div>
-              </div>
+            <div class="arch-diagram-v" role="img" aria-label="GRC System architecture">
+              <div class="arch-step source">Policy &amp; Controls + OFAC / Reg Data</div>
+              <div class="arch-step-sep">↓</div>
+              <div class="arch-step engine">Risk &amp; Compliance Engine</div>
+              <div class="arch-step-sep">↓</div>
+              <div class="arch-step output">Control Assessment + SAR / CTR Report</div>
             </div>
 
             <div class="proj-tags">
@@ -541,27 +527,17 @@
               </div>
             </div>
             <p class="proj-desc">
-              End-to-end production ML fraud prevention system processing 2M+ transactions/day at sub-300ms latency.
-              XGBoost and LightGBM models score every ACH, Wire, Zelle, and Payee transaction in-flight via Apache Kafka.
-              Automated halt rules block suspicious transactions before settlement, preventing ~$1M+ annual fraud loss.
+              End-to-end production ML fraud prevention processing 2M+ transactions/day at sub-300ms latency.
+              XGBoost and LightGBM score every ACH, Wire, Zelle transaction via Apache Kafka —
+              automated halt rules block fraud before settlement, preventing ~$1M+ annual loss.
             </p>
 
-            <!-- Architecture Diagram -->
-            <div class="arch-diagram" role="img" aria-label="Fraud ML Pipeline architecture">
-              <div class="arch-row">
-                <div class="arch-node source">ACH / Wire / Zelle</div>
-                <div class="arch-arrow">→</div>
-                <div class="arch-node engine">Apache Kafka</div>
-                <div class="arch-arrow">→</div>
-                <div class="arch-node engine">XGBoost / LGB</div>
-              </div>
-              <div class="arch-row">
-                <div class="arch-node source">OFAC / WLF APIs</div>
-                <div class="arch-arrow">→</div>
-                <div class="arch-node engine">Rule Engine</div>
-                <div class="arch-arrow">→</div>
-                <div class="arch-node output">Block / Allow / Alert</div>
-              </div>
+            <div class="arch-diagram-v" role="img" aria-label="Fraud ML Pipeline architecture">
+              <div class="arch-step source">ACH / Wire / Zelle + OFAC / WLF APIs</div>
+              <div class="arch-step-sep">↓</div>
+              <div class="arch-step engine">Apache Kafka → XGBoost / LightGBM + Rule Engine</div>
+              <div class="arch-step-sep">↓</div>
+              <div class="arch-step output">Block / Allow / Alert Decision</div>
             </div>
 
             <div class="proj-tags">
@@ -583,27 +559,17 @@
               </div>
             </div>
             <p class="proj-desc">
-              AWS Bedrock AI agent (Claude/Llama) enabling fraud analysts to query alert and case data in natural language.
-              Reduced manual case review time by ~40%, improved decision traceability, and accelerated escalation resolution
-              across fraud operations teams. Integrates with live alert databases and case management systems.
+              AWS Bedrock AI agent (Claude/Llama) enabling fraud analysts to query alert and case data
+              in natural language. Reduced manual case review time by ~40%, improved decision traceability,
+              and accelerated escalation resolution across fraud operations teams.
             </p>
 
-            <!-- Architecture Diagram -->
-            <div class="arch-diagram" role="img" aria-label="AWS Bedrock AI Agent architecture">
-              <div class="arch-row">
-                <div class="arch-node source">Fraud Alerts / Cases</div>
-                <div class="arch-arrow">→</div>
-                <div class="arch-node engine">AWS Bedrock Agent</div>
-                <div class="arch-arrow">→</div>
-                <div class="arch-node output">NL Query Response</div>
-              </div>
-              <div class="arch-row">
-                <div class="arch-node source">Case DB / RDS Aurora</div>
-                <div class="arch-arrow">→</div>
-                <div class="arch-node engine">Claude / Llama LLM</div>
-                <div class="arch-arrow">→</div>
-                <div class="arch-node output">Decision Traceability</div>
-              </div>
+            <div class="arch-diagram-v" role="img" aria-label="AWS Bedrock AI Agent architecture">
+              <div class="arch-step source">Fraud Alerts / Cases + Case DB (RDS Aurora)</div>
+              <div class="arch-step-sep">↓</div>
+              <div class="arch-step engine">AWS Bedrock Agent (Claude / Llama LLM)</div>
+              <div class="arch-step-sep">↓</div>
+              <div class="arch-step output">NL Query Response + Decision Traceability</div>
             </div>
 
             <div class="proj-tags">
@@ -613,22 +579,7 @@
             <span class="proj-label">~40% reduction in case review time</span>
           </div>
 
-          </div><!-- end .proj-carousel -->
-
-          <div class="proj-carousel-nav">
-            <button class="proj-nav-btn" id="projPrev" aria-label="Previous project">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-            </button>
-            <div class="proj-dots" id="projDots" role="tablist" aria-label="Project slides">
-              <button class="proj-dot active" role="tab" aria-selected="true"  aria-label="Project 1" data-idx="0"></button>
-              <button class="proj-dot"        role="tab" aria-selected="false" aria-label="Project 2" data-idx="1"></button>
-              <button class="proj-dot"        role="tab" aria-selected="false" aria-label="Project 3" data-idx="2"></button>
-            </div>
-            <button class="proj-nav-btn" id="projNext" aria-label="Next project">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-          </div>
-        </div><!-- end .proj-carousel-wrap -->
+        </div>
       </div>
     </section>
 
