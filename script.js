@@ -273,6 +273,202 @@
   });
 }());
 
+/* ─── SITE SEARCH ───────────────────────────────────────── */
+(function () {
+  var overlay  = document.getElementById('searchOverlay');
+  var inputEl  = document.getElementById('searchInput');
+  var resultEl = document.getElementById('searchResults');
+  var navBtn   = document.getElementById('navSearch');
+  var closeBtn = document.getElementById('searchClose');
+  if (!overlay || !inputEl || !resultEl) return;
+
+  /* ─ Index ─────────────────────────────────────────────── */
+  var idx = [];
+
+  function add(text, label, section, scrollEl, flipCardEl) {
+    text = (text || '').replace(/\s+/g, ' ').trim();
+    if (text.length < 2) return;
+    idx.push({ text: text, label: label, section: section, scrollEl: scrollEl, flipCardEl: flipCardEl || null });
+  }
+
+  function buildIndex() {
+    /* Skills — all chip categories including Actimize */
+    document.querySelectorAll('#skills [class*="skill-cat"]').forEach(function (cat) {
+      var name = (cat.querySelector('h3') || {}).textContent || 'Skills';
+      cat.querySelectorAll('.skill-chips span, .actimize-versions span').forEach(function (chip) {
+        add(chip.textContent, name.trim(), 'skills', cat, null);
+      });
+      cat.querySelectorAll('.actimize-sub').forEach(function (sub) {
+        var subName = ((sub.querySelector('h5') || {}).textContent || '').trim();
+        sub.querySelectorAll('.skill-chips span').forEach(function (chip) {
+          add(chip.textContent, 'Actimize — ' + subName, 'skills', cat, null);
+        });
+      });
+    });
+
+    /* Experience — front summary bullets + back detail bullets */
+    document.querySelectorAll('.flip-card').forEach(function (card) {
+      var company = ((card.querySelector('.flip-front h3') || {}).textContent || '').trim();
+      /* Front */
+      card.querySelectorAll('.flip-front .fc-brief li, .flip-front .fc-tags span').forEach(function (el) {
+        add(el.textContent, company, 'exp', card, null);
+      });
+      /* Back — detail lines; clicking these flips the card */
+      card.querySelectorAll('.flip-back .fb-group h4').forEach(function (el) {
+        add(el.textContent, company + ' — ' + el.textContent.trim(), 'exp', card, card);
+      });
+      card.querySelectorAll('.flip-back .fb-group li').forEach(function (el) {
+        add(el.textContent, company + ' — Details', 'exp', card, card);
+      });
+    });
+
+    /* Projects */
+    document.querySelectorAll('.proj-card').forEach(function (card) {
+      var title = ((card.querySelector('h3') || {}).textContent || '').trim();
+      add((card.querySelector('.proj-desc') || {}).textContent || '', title, 'proj', card, null);
+      card.querySelectorAll('.proj-tags span').forEach(function (tag) {
+        add(tag.textContent, title, 'proj', card, null);
+      });
+    });
+
+    /* Education & Certifications */
+    var eduSec = document.getElementById('education');
+    document.querySelectorAll('.edu-card h3, .edu-card p, .cert-card h4').forEach(function (el) {
+      add(el.textContent, 'Education & Certifications', 'edu', eduSec, null);
+    });
+
+    /* About */
+    var aboutSec = document.getElementById('about');
+    document.querySelectorAll('.about-pills span, .expertise-grid h3, .expertise-grid p').forEach(function (el) {
+      add(el.textContent, 'About', 'about', aboutSec, null);
+    });
+  }
+
+  /* ─ Search ────────────────────────────────────────────── */
+  var currentHits = [];
+  var activeI = -1;
+
+  function runSearch(q) {
+    currentHits = [];
+    activeI = -1;
+    if (!q || q.length < 2) {
+      resultEl.innerHTML = '<li class="search-empty">Start typing to search across the entire portfolio…</li>';
+      return;
+    }
+    var ql = q.toLowerCase();
+    var seen = new Set();
+    idx.forEach(function (item) {
+      if (item.text.toLowerCase().indexOf(ql) !== -1) {
+        var key = item.section + '|' + item.label + '|' + item.text.slice(0, 60);
+        if (!seen.has(key)) { seen.add(key); currentHits.push(item); }
+      }
+    });
+
+    if (!currentHits.length) {
+      resultEl.innerHTML = '<li class="search-empty">No results for "<strong>' + esc(q) + '</strong>" — try another keyword.</li>';
+      return;
+    }
+
+    var badgeLabel = { skills: 'Skills', exp: 'Experience', proj: 'Projects', edu: 'Education', about: 'About' };
+    var badgeCls   = { skills: 'sr-badge-skills', exp: 'sr-badge-exp', proj: 'sr-badge-proj', edu: 'sr-badge-edu', about: 'sr-badge-about' };
+
+    resultEl.innerHTML = currentHits.slice(0, 12).map(function (item, i) {
+      var snippet = hilite(clip(item.text, 80), q);
+      var flipTag = item.flipCardEl ? '<span class="sr-flip-tag" aria-label="opens flip card">⟳ flip card</span>' : '';
+      return '<li class="search-result-item" role="option" data-i="' + i + '">' +
+        '<span class="sr-badge ' + (badgeCls[item.section] || '') + '">' + (badgeLabel[item.section] || item.section) + '</span>' +
+        '<div class="sr-body">' +
+          '<div class="sr-label">' + esc(item.label) + '</div>' +
+          '<div class="sr-snippet">' + snippet + '</div>' +
+        '</div>' +
+        flipTag +
+        '<svg class="sr-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>' +
+      '</li>';
+    }).join('');
+
+    resultEl.querySelectorAll('.search-result-item').forEach(function (el) {
+      el.addEventListener('mousedown', function (e) {
+        e.preventDefault();
+        navigate(currentHits[+el.dataset.i]);
+      });
+    });
+  }
+
+  /* ─ Navigate ──────────────────────────────────────────── */
+  function navigate(item) {
+    if (!item) return;
+    closeSearch();
+    if (item.flipCardEl) {
+      /* flip the card open, then scroll */
+      item.flipCardEl.classList.add('flipped');
+      setTimeout(function () { smoothScroll(item.scrollEl); }, 120);
+    } else {
+      if (item.scrollEl && item.scrollEl.classList && item.scrollEl.classList.contains('flip-card')) {
+        item.scrollEl.classList.remove('flipped'); /* ensure front is visible */
+      }
+      smoothScroll(item.scrollEl);
+    }
+  }
+
+  function smoothScroll(el) {
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  /* ─ Keyboard active item ──────────────────────────────── */
+  function setActive(i) {
+    var items = resultEl.querySelectorAll('.search-result-item');
+    if (!items.length) return;
+    if (activeI >= 0 && items[activeI]) items[activeI].classList.remove('sr-active');
+    activeI = Math.max(0, Math.min(i, items.length - 1));
+    if (items[activeI]) { items[activeI].classList.add('sr-active'); items[activeI].scrollIntoView({ block: 'nearest' }); }
+  }
+
+  /* ─ Open / Close ──────────────────────────────────────── */
+  function openSearch() {
+    overlay.classList.add('open');
+    setTimeout(function () { inputEl.focus(); inputEl.select(); }, 40);
+  }
+  function closeSearch() {
+    overlay.classList.remove('open');
+    inputEl.value = '';
+    resultEl.innerHTML = '<li class="search-empty">Start typing to search across the entire portfolio…</li>';
+    activeI = -1; currentHits = [];
+  }
+
+  /* ─ Helpers ───────────────────────────────────────────── */
+  function clip(str, len) { return str.length > len ? str.slice(0, len) + '…' : str; }
+  function esc(s)  { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function hilite(text, q) {
+    var safe = esc(text);
+    return safe.replace(new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi'), '<mark>$1</mark>');
+  }
+
+  /* ─ Events ────────────────────────────────────────────── */
+  inputEl.addEventListener('input', function () { runSearch(inputEl.value.trim()); });
+
+  inputEl.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowDown') { e.preventDefault(); setActive(activeI + 1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(activeI - 1); }
+    else if (e.key === 'Enter') { navigate(activeI >= 0 ? currentHits[activeI] : currentHits[0]); }
+    else if (e.key === 'Escape') { closeSearch(); }
+  });
+
+  if (navBtn)   navBtn.addEventListener('click', openSearch);
+  if (closeBtn) closeBtn.addEventListener('click', closeSearch);
+  overlay.addEventListener('mousedown', function (e) { if (e.target === overlay) closeSearch(); });
+
+  /* Ctrl+K / Cmd+K shortcut */
+  document.addEventListener('keydown', function (e) {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); overlay.classList.contains('open') ? closeSearch() : openSearch(); }
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeSearch();
+  });
+
+  /* Build index after full DOM is parsed */
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', buildIndex);
+  else buildIndex();
+}());
+
 /* ─── FOOTER YEAR ───────────────────────────────────────── */
 var yr = document.getElementById('year');
 if (yr) yr.textContent = new Date().getFullYear();
