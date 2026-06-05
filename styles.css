@@ -716,6 +716,29 @@ h4 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spa
   background: var(--accent); display: inline-block;
 }
 
+/* ─── SEARCH HIGHLIGHT ON PAGE ───────────────────────────── */
+mark.search-hl {
+  background: rgba(250,204,21,0.45);
+  color: inherit;
+  border-radius: 3px;
+  padding: 1px 3px;
+  outline: 2px solid rgba(234,179,8,0.7);
+  outline-offset: 1px;
+  animation: hl-pop 0.35s var(--ease) forwards;
+}
+mark.search-hl-out {
+  animation: hl-fade 0.5s ease forwards;
+}
+@keyframes hl-pop {
+  0%   { background: rgba(250,204,21,0.75); outline-color: rgba(234,179,8,1); transform: scale(1.08); }
+  60%  { transform: scale(1.02); }
+  100% { background: rgba(250,204,21,0.45); outline-color: rgba(234,179,8,0.7); transform: scale(1); }
+}
+@keyframes hl-fade {
+  from { background: rgba(250,204,21,0.45); outline-color: rgba(234,179,8,0.7); }
+  to   { background: transparent; outline-color: transparent; }
+}
+
 /* ─── FOOTER ─────────────────────────────────────────────── */
 .footer { border-top: 1px solid var(--border); padding: 2.5rem 0; background: var(--bg-alt); }
 .footer-inner { display: flex; flex-direction: column; gap: 0.55rem; }

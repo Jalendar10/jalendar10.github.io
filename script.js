@@ -394,25 +394,93 @@
     });
   }
 
-  /* ─ Navigate ──────────────────────────────────────────── */
+  /* ─ Navigate + highlight ──────────────────────────────── */
+  var hlTimer = null;
+
   function navigate(item) {
     if (!item) return;
+    var q = inputEl.value.trim(); /* capture query before closing */
     closeSearch();
+    clearHighlights();            /* remove any previous highlights */
+
     if (item.flipCardEl) {
-      /* flip the card open, then scroll */
       item.flipCardEl.classList.add('flipped');
-      setTimeout(function () { smoothScroll(item.scrollEl); }, 120);
+      setTimeout(function () {
+        smoothScroll(item.scrollEl);
+        setTimeout(function () { paintHighlights(item.scrollEl, q); }, 450);
+      }, 140);
     } else {
-      if (item.scrollEl && item.scrollEl.classList && item.scrollEl.classList.contains('flip-card')) {
-        item.scrollEl.classList.remove('flipped'); /* ensure front is visible */
+      if (item.scrollEl && item.scrollEl.classList &&
+          item.scrollEl.classList.contains('flip-card')) {
+        item.scrollEl.classList.remove('flipped');
       }
       smoothScroll(item.scrollEl);
+      setTimeout(function () { paintHighlights(item.scrollEl, q); }, 420);
     }
   }
 
   function smoothScroll(el) {
     if (!el) return;
     el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  /* ─ Text highlight in the page ───────────────────────── */
+  function paintHighlights(root, q) {
+    if (!root || !q || q.length < 2) return;
+    var re = new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        var tag = (node.parentNode || {}).tagName || '';
+        if (/^(SCRIPT|STYLE|MARK)$/i.test(tag)) return NodeFilter.FILTER_REJECT;
+        return re.test(node.nodeValue) ? (re.lastIndex = 0, NodeFilter.FILTER_ACCEPT)
+                                       : (re.lastIndex = 0, NodeFilter.FILTER_SKIP);
+      }
+    }, false);
+
+    var textNodes = [];
+    var n;
+    while ((n = walker.nextNode())) textNodes.push(n);
+
+    var firstMark = null;
+    textNodes.forEach(function (tn) {
+      re.lastIndex = 0;
+      var val = tn.nodeValue, frag = document.createDocumentFragment(), last = 0, m;
+      while ((m = re.exec(val)) !== null) {
+        if (m.index > last) frag.appendChild(document.createTextNode(val.slice(last, m.index)));
+        var mk = document.createElement('mark');
+        mk.className = 'search-hl';
+        mk.textContent = m[0];
+        frag.appendChild(mk);
+        if (!firstMark) firstMark = mk;
+        last = m.index + m[0].length;
+      }
+      if (last < val.length) frag.appendChild(document.createTextNode(val.slice(last)));
+      tn.parentNode.replaceChild(frag, tn);
+    });
+
+    /* scroll precisely to first highlighted word */
+    if (firstMark) {
+      setTimeout(function () {
+        firstMark.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 80);
+    }
+
+    /* auto-fade after 3.5 s */
+    if (hlTimer) clearTimeout(hlTimer);
+    hlTimer = setTimeout(clearHighlights, 3500);
+  }
+
+  function clearHighlights() {
+    /* fade out first, then unwrap */
+    document.querySelectorAll('mark.search-hl').forEach(function (mk) {
+      mk.classList.add('search-hl-out');
+    });
+    setTimeout(function () {
+      document.querySelectorAll('mark.search-hl').forEach(function (mk) {
+        var p = mk.parentNode;
+        if (p) { p.replaceChild(document.createTextNode(mk.textContent), mk); p.normalize(); }
+      });
+    }, 500);
   }
 
   /* ─ Keyboard active item ──────────────────────────────── */
