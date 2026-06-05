@@ -3,21 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jalendar Reddy Maligireddy | Portfolio</title>
-  <meta name="description" content="Personal portfolio website of Jalendar Reddy Maligireddy - Software Engineer, Data Engineer, and AML/Fraud technology professional." />
+  <title>Jalendar Reddy Maligireddy | Senior Data Scientist & Fraud Model Developer</title>
+  <meta name="description" content="Senior Data Scientist and Fraud Model Developer specializing in production ML fraud models, AML/KYC risk, AWS deployment, Kafka real-time scoring, and model monitoring." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <nav class="nav">
-      <a class="brand" href="#home">Jalendar Reddy</a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Jalendar Reddy home">
+        <span class="brand-mark">JR</span>
+        <span>Jalendar Reddy</span>
+      </a>
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <div class="nav-links">
-        <a href="#about">About</a>
+        <a href="#impact">Impact</a>
+        <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -25,101 +34,233 @@
 
   <main>
     <section id="home" class="hero">
-      <div class="hero-text">
-        <p class="eyebrow">Software Engineer • Data Engineer • AML/Fraud Tech</p>
-        <h1>Hi, I am Jalendar Reddy Maligireddy.</h1>
-        <p class="subtitle">
-          I build scalable data pipelines, AML/Fraud platforms, cloud solutions, and AI-powered tools using Java,
-          Python, SQL, Snowflake, BigQuery, Spark, and modern cloud platforms.
+      <div class="hero-copy">
+        <p class="eyebrow">Senior Data Scientist & Fraud Model Developer</p>
+        <h1>Production ML fraud systems for banking, fintech, AML, and KYC risk.</h1>
+        <p class="hero-summary">
+          I own fraud model lifecycles from problem framing, feature engineering, and validation through AWS deployment,
+          monitoring, drift detection, and measurable loss reduction.
         </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn secondary" href="https://github.com/Jalendar10" target="_blank" rel="noopener">GitHub</a>
+        <div class="hero-actions" aria-label="Primary actions">
+          <a class="btn primary" href="assets/Jalendar_Reddy_Senior_DS_Fraud_Model.pdf" download>Download PDF Resume</a>
+          <a class="btn secondary" href="assets/Jalendar_Reddy_Senior_DS_Fraud_Model.docx" download>Download DOCX</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/jalendarreddymaligireddy/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
-      <div class="hero-card">
-        <h2>Focus Areas</h2>
-        <ul>
-          <li>AML / BSA / Fraud Systems</li>
-          <li>Data Engineering and ETL/ELT</li>
-          <li>Cloud Data Platforms</li>
-          <li>AI Automation and Analytics</li>
-        </ul>
+
+      <aside class="signal-board" aria-label="Fraud model operating profile">
+        <div class="board-header">
+          <span class="status-dot"></span>
+          <span>Fraud Model Operations</span>
+        </div>
+        <div class="signal-grid">
+          <div>
+            <strong>2M+</strong>
+            <span>transactions/day</span>
+          </div>
+          <div>
+            <strong>&lt;300ms</strong>
+            <span>real-time latency</span>
+          </div>
+          <div>
+            <strong>$1M+</strong>
+            <span>annual loss prevented</span>
+          </div>
+          <div>
+            <strong>40+</strong>
+            <span>client portfolios</span>
+          </div>
+        </div>
+        <div class="risk-stream">
+          <span style="--w: 88%"></span>
+          <span style="--w: 64%"></span>
+          <span style="--w: 76%"></span>
+          <span style="--w: 52%"></span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="impact" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Selected impact</p>
+        <h2>Model outcomes tied to fraud loss, false positives, and operating speed.</h2>
+      </div>
+      <div class="metric-grid">
+        <article class="metric-card">
+          <span>01</span>
+          <h3>Real-time stop-loss prevention</h3>
+          <p>Kafka-based ML scoring evaluates ACH, Wire, Zelle, and Payee transactions in-flight before settlement.</p>
+        </article>
+        <article class="metric-card">
+          <span>02</span>
+          <h3>Precision-tuned rule portfolio</h3>
+          <p>Built and maintained 1,000+ fraud rules across velocity, MCC/SIC, geo-risk, split-transaction, and network signals.</p>
+        </article>
+        <article class="metric-card">
+          <span>03</span>
+          <h3>Production model governance</h3>
+          <p>Established AUC/KS drift checks, dashboard monitoring, recalibration triggers, and escalation protocols.</p>
+        </article>
+        <article class="metric-card">
+          <span>04</span>
+          <h3>AI-assisted fraud operations</h3>
+          <p>Developed an AWS Bedrock analyst agent that reduced manual case review time by roughly 40%.</p>
+        </article>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <h2>About Me</h2>
-      <p>
-        I am a technology professional with experience across full-stack engineering, data engineering,
-        AML/Fraud applications, and cloud-based analytics. I enjoy building reliable systems that transform
-        raw business data into actionable insights and automated workflows.
-      </p>
+    <section id="experience" class="section split-section">
+      <div class="section-heading sticky-heading">
+        <p class="eyebrow">Experience</p>
+        <h2>Senior fraud modeling, AML systems, and regulated production delivery.</h2>
+        <p>
+          8+ years of quantitative modeling and engineering experience, including 5+ years owning production fraud models.
+        </p>
+      </div>
+      <div class="timeline">
+        <article class="role-card">
+          <div class="role-top">
+            <div>
+              <h3>Fiserv</h3>
+              <p>Senior Data Scientist & Fraud Model Developer</p>
+            </div>
+            <span>May 2024 - Present</span>
+          </div>
+          <ul>
+            <li>Owned end-to-end model lifecycle across Oracle, PostgreSQL, Snowflake, AWS Glue ETL, model training, validation, ECS deployment, and monitoring.</li>
+            <li>Built reusable modeling frameworks with XGBoost, LightGBM, Gradient Boosting, Random Forests, AUC/KS, precision/recall, and F1 validation.</li>
+            <li>Partnered with Risk, Fraud Ops, Finance, Engineering, and Compliance to translate model outputs into fraud-loss and customer-friction decisions.</li>
+          </ul>
+        </article>
+
+        <article class="role-card">
+          <div class="role-top">
+            <div>
+              <h3>Mukegroup</h3>
+              <p>Software Engineer - AML & Fraud Model Development</p>
+            </div>
+            <span>Jan 2023 - Apr 2024</span>
+          </div>
+          <ul>
+            <li>Designed, validated, and monitored IFM-X transaction monitoring models with precision/recall trade-off analysis.</li>
+            <li>Integrated OFAC, LexisNexis, and WLF risk signals into real-time decisioning flows.</li>
+            <li>Built Tableau and RCM dashboards for model performance, operational visibility, and production escalation management.</li>
+          </ul>
+        </article>
+
+        <article class="role-card">
+          <div class="role-top">
+            <div>
+              <h3>Tata Consultancy Services</h3>
+              <p>Assistant System Engineer - Fraud & AML Systems</p>
+            </div>
+            <span>Jan 2020 - Jul 2021</span>
+          </div>
+          <ul>
+            <li>Implemented IFM transaction monitoring models with OFAC/WLF external risk data integration.</li>
+            <li>Engineered PL/SQL extraction pipelines for regulatory reporting and automated batch scoring via AutoSys.</li>
+            <li>Supported DEV, UAT, PROD model validation, QA regression cycles, and release readiness.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Model lifecycle</p>
+        <h2>A practical operating model for fraud ML in production.</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-card">
+          <span>Frame</span>
+          <p>Translate fraud strategy, loss exposure, member friction, and compliance guardrails into measurable model objectives.</p>
+        </div>
+        <div class="process-card">
+          <span>Engineer</span>
+          <p>Aggregate features from Snowflake, Oracle, PostgreSQL, Glue ETL, Kafka streams, graph relationships, and risk providers.</p>
+        </div>
+        <div class="process-card">
+          <span>Validate</span>
+          <p>Use AUC, KS, precision/recall, F1, false-positive analysis, and model-risk review before deployment.</p>
+        </div>
+        <div class="process-card">
+          <span>Operate</span>
+          <p>Deploy on AWS, monitor drift, recalibrate rules/models, and report business impact to fraud and compliance leaders.</p>
+        </div>
+      </div>
     </section>
 
     <section id="skills" class="section">
-      <h2>Technical Skills</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Languages</h3>
-          <p>Python, Java, SQL, JavaScript, Shell</p>
-        </div>
-        <div class="card">
-          <h3>Data Platforms</h3>
-          <p>Snowflake, BigQuery, Oracle, SQL Server, MySQL, DB2</p>
-        </div>
-        <div class="card">
-          <h3>Big Data and ETL</h3>
-          <p>Spark, PySpark, Airflow, ADF, Databricks, Informatica</p>
-        </div>
-        <div class="card">
-          <h3>Cloud and Tools</h3>
-          <p>AWS, Azure, GCP, GitHub, Docker, Power BI, Tableau</p>
-        </div>
+      <div class="section-heading">
+        <p class="eyebrow">Technical stack</p>
+        <h2>Hands-on tools across modeling, data platforms, cloud infrastructure, and fraud domain systems.</h2>
       </div>
-    </section>
-
-    <section id="projects" class="section">
-      <h2>Featured Projects</h2>
-      <div class="project-list">
-        <article class="project">
-          <h3>AML Alert Generation Platform</h3>
-          <p>
-            Designed batch-based merchant and principal data processing, risk scoring, and alert creation
-            workflows for AML/Fraud review operations.
-          </p>
+      <div class="skill-grid">
+        <article class="skill-card">
+          <h3>ML / Modeling</h3>
+          <p>Python, XGBoost, LightGBM, Gradient Boosting, Random Forests, Decision Trees, Neural Networks, Clustering, Regression, Drift Detection</p>
         </article>
-        <article class="project">
-          <h3>AI SQL Query Assistant</h3>
-          <p>
-            Built a natural-language-to-SQL assistant for generating, testing, and analyzing SQL queries
-            against enterprise data platforms.
-          </p>
+        <article class="skill-card">
+          <h3>Data & Visualization</h3>
+          <p>SQL, Snowflake, PostgreSQL, Oracle, AWS Glue ETL, Tableau, Power BI, Pandas, NumPy, Spark</p>
         </article>
-        <article class="project">
-          <h3>Cloud Data Pipeline</h3>
-          <p>
-            Developed ETL/ELT workflows using Spark, Databricks, ADF, Snowflake, and cloud storage to support
-            analytics and reporting.
-          </p>
+        <article class="skill-card">
+          <h3>Cloud / Infrastructure</h3>
+          <p>AWS ECS, Bedrock, Glue, RDS Aurora, Lambda, SQS/SNS, CloudWatch, Kafka, Redis, Docker, Kubernetes, Jenkins, GitLab CI/CD</p>
+        </article>
+        <article class="skill-card">
+          <h3>Fraud / AML</h3>
+          <p>OFAC, LexisNexis, Neustar, Experian, Graph Fraud Detection, SAR, FinCEN, CTR, KYC, CDD, AML, BSA, IFM-X, Actimize AIS/RCM</p>
         </article>
       </div>
     </section>
 
-    <section id="contact" class="section contact">
-      <h2>Contact</h2>
-      <p>Lets connect for software engineering, data engineering, AML/Fraud, and AI automation opportunities.</p>
-      <div class="contact-links">
-        <a href="mailto:vijayreddymaligireddy@gmail.com">Email Me</a>
-        <a href="https://github.com/Jalendar10" target="_blank" rel="noopener">GitHub Profile</a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+    <section id="education" class="section split-section">
+      <div class="section-heading sticky-heading">
+        <p class="eyebrow">Education & recognition</p>
+        <h2>Academic foundation and professional credentials.</h2>
       </div>
-      <p class="note">Replace the LinkedIn link with your actual LinkedIn profile URL.</p>
+      <div class="credential-grid">
+        <article class="credential-card">
+          <h3>Doctor of Information Technology</h3>
+          <p>University of the Cumberlands</p>
+          <span>Doctoral Candidate, 2023 - Present</span>
+        </article>
+        <article class="credential-card">
+          <h3>M.S. Data Science</h3>
+          <p>University of North Texas</p>
+          <span>GPA 3.6 / 4.0, 2021 - 2022</span>
+        </article>
+        <article class="credential-card">
+          <h3>B.Tech</h3>
+          <p>First Rank and 100% Merit Scholarship</p>
+          <span>Pre-2020</span>
+        </article>
+        <article class="credential-card">
+          <h3>Certifications & Honors</h3>
+          <p>Microsoft Certified: Azure Data Fundamentals, Employee of the Year at TCS, IEEE SMC 2026 Peer Reviewer, ConnectSpend iOS App</p>
+          <span>Professional recognition</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Available for senior data science, fraud modeling, AML/KYC, and ML platform opportunities.</h2>
+      </div>
+      <div class="contact-panel">
+        <a href="mailto:jmaligireddy97@gmail.com">jmaligireddy97@gmail.com</a>
+        <a href="tel:+19407831342">+1 (940) 783-1342</a>
+        <a href="https://www.linkedin.com/in/jalendarreddymaligireddy/" target="_blank" rel="noopener">LinkedIn Profile</a>
+        <a href="assets/Jalendar_Reddy_Senior_DS_Fraud_Model.pdf" download>Download Resume PDF</a>
+        <a href="assets/Jalendar_Reddy_Senior_DS_Fraud_Model.docx" download>Download Resume DOCX</a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>(c) <span id="year"></span> Jalendar Reddy Maligireddy. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> Jalendar Reddy Maligireddy. Built for production ML, fraud risk, and data science leadership.</p>
   </footer>
 
   <script src="script.js"></script>
