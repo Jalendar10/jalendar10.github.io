@@ -718,25 +718,24 @@ h4 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spa
 
 /* ─── SEARCH HIGHLIGHT ON PAGE ───────────────────────────── */
 mark.search-hl {
-  background: rgba(250,204,21,0.45);
-  color: inherit;
-  border-radius: 3px;
-  padding: 1px 3px;
-  outline: 2px solid rgba(234,179,8,0.7);
-  outline-offset: 1px;
-  animation: hl-pop 0.35s var(--ease) forwards;
+  background: #fde047;
+  color: #713f12;
+  border-radius: 4px;
+  padding: 2px 4px;
+  box-shadow: 0 0 0 3px rgba(234,179,8,0.55);
+  font-style: normal;
+  animation: hl-pulse 0.9s ease-in-out 3;
 }
 mark.search-hl-out {
-  animation: hl-fade 0.5s ease forwards;
+  animation: hl-fade 0.38s ease forwards !important;
 }
-@keyframes hl-pop {
-  0%   { background: rgba(250,204,21,0.75); outline-color: rgba(234,179,8,1); transform: scale(1.08); }
-  60%  { transform: scale(1.02); }
-  100% { background: rgba(250,204,21,0.45); outline-color: rgba(234,179,8,0.7); transform: scale(1); }
+@keyframes hl-pulse {
+  0%,100% { background: #fde047; box-shadow: 0 0 0 3px rgba(234,179,8,0.55); }
+  50%      { background: #facc15; box-shadow: 0 0 0 6px rgba(234,179,8,0.22), 0 0 18px rgba(234,179,8,0.5); }
 }
 @keyframes hl-fade {
-  from { background: rgba(250,204,21,0.45); outline-color: rgba(234,179,8,0.7); }
-  to   { background: transparent; outline-color: transparent; }
+  from { background: #fde047; box-shadow: 0 0 0 3px rgba(234,179,8,0.55); color: #713f12; }
+  to   { background: transparent; box-shadow: none; color: inherit; }
 }
 
 /* ─── FOOTER ─────────────────────────────────────────────── */

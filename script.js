@@ -465,14 +465,29 @@
       }, 80);
     }
 
-    /* auto-fade after 3.5 s */
+    /* clear on next user scroll or click — attach after smooth-scroll settles */
     if (hlTimer) clearTimeout(hlTimer);
-    hlTimer = setTimeout(clearHighlights, 3500);
+    hlTimer = setTimeout(attachClearListeners, 950);
+  }
+
+  /* attach once-only scroll + click listeners that wipe highlights */
+  function attachClearListeners() {
+    var done = false;
+    function dismiss() {
+      if (done) return;
+      done = true;
+      window.removeEventListener('scroll', dismiss, { passive: true });
+      document.removeEventListener('click',  dismiss);
+      clearHighlights();
+    }
+    window.addEventListener('scroll', dismiss, { passive: true });
+    document.addEventListener('click',  dismiss);
   }
 
   function clearHighlights() {
-    /* fade out first, then unwrap */
-    document.querySelectorAll('mark.search-hl').forEach(function (mk) {
+    if (hlTimer) { clearTimeout(hlTimer); hlTimer = null; }
+    /* trigger fade-out CSS, then unwrap the mark elements */
+    document.querySelectorAll('mark.search-hl:not(.search-hl-out)').forEach(function (mk) {
       mk.classList.add('search-hl-out');
     });
     setTimeout(function () {
@@ -480,7 +495,7 @@
         var p = mk.parentNode;
         if (p) { p.replaceChild(document.createTextNode(mk.textContent), mk); p.normalize(); }
       });
-    }, 500);
+    }, 420);
   }
 
   /* ─ Keyboard active item ──────────────────────────────── */
