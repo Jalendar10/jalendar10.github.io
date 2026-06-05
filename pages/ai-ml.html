@@ -3,15 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI / ML Engineering | Jalendar Reddy</title>
+  <title>AI / ML Engineering | Maligireddy Jalendar Reddy</title>
+  <meta name="description" content="AI/ML engineering deep dive — XGBoost, LightGBM, neural networks, AUC/KS validation, drift detection, AWS Bedrock AI agents, production ML deployment by Maligireddy Jalendar Reddy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .page-wrap { max-width: 860px; margin: 0 auto; padding: calc(var(--nav-h) + 3rem) var(--pad) 5rem; }
+    .page-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.85rem; font-weight: 600; color: var(--accent);
+      margin-bottom: 2rem; transition: opacity 0.2s;
+    }
+    .page-back:hover { opacity: 0.7; }
+    .page-label { font-size: 0.73rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.6rem; display: block; }
+    .page-wrap h1 { font-size: clamp(2rem, 4vw, 3rem); color: var(--t1); margin-bottom: 1rem; }
+    .page-wrap > p { font-size: 1.05rem; color: var(--t2); line-height: 1.8; margin-bottom: 2.5rem; max-width: 680px; }
+    .coming-card {
+      background: var(--surface); border: 1.5px dashed rgba(79,70,229,0.25);
+      border-radius: 16px; padding: 2.5rem; text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .coming-card h2 { font-size: 1.15rem; color: var(--t1); margin-bottom: 0.75rem; }
+    .coming-card p { font-size: 0.9rem; color: var(--t3); line-height: 1.7; max-width: 480px; margin: 0 auto 1.5rem; }
+    .topic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 2rem; text-align: left; }
+    .topic-item {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1rem;
+      font-size: 0.83rem; font-weight: 500; color: var(--t2);
+    }
+    .topic-item strong { display: block; font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
+  </style>
 </head>
-<body class="detail-page">
-  <main class="detail-shell">
-    <a class="back-link" href="../index.html#workstreams">Back to portfolio</a>
-    <p class="eyebrow">Future page</p>
-    <h1>AI / ML Engineering</h1>
-    <p>Reserved for model architecture, validation metrics, drift detection, recalibration, AWS deployment, and AI agent case studies from verified materials.</p>
+<body>
+
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <div class="nav-logo">JR</div>
+        <span>Jalendar Reddy</span>
+      </a>
+      <div class="nav-end">
+        <a href="../index.html" class="nav-download">← Back to Portfolio</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-wrap">
+      <a href="../index.html#about" class="page-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Portfolio
+      </a>
+
+      <span class="page-label">Deep Dive</span>
+      <h1>AI / ML Engineering</h1>
+      <p>
+        In-depth model architecture walkthroughs, validation frameworks, drift detection methodologies,
+        and production deployment patterns — covering XGBoost, LightGBM, gradient boosting, neural networks,
+        AUC/KS validation, automated recalibration, and AWS Bedrock AI agent development.
+      </p>
+
+      <div class="coming-card">
+        <h2>Detailed Content Coming Soon</h2>
+        <p>
+          This page will include model architecture diagrams, validation metric case studies,
+          drift detection patterns, and AWS Bedrock AI agent technical documentation.
+          Content will be added progressively.
+        </p>
+        <a href="mailto:jmaligireddy97@gmail.com" class="btn-primary" style="width:fit-content;margin:0 auto;">
+          Request Information
+        </a>
+      </div>
+
+      <div class="topic-grid">
+        <div class="topic-item"><strong>XGBoost / LightGBM</strong>Feature engineering, hyperparameter tuning, production scoring</div>
+        <div class="topic-item"><strong>Gradient Boosting</strong>Ensemble methods, SHAP explainability, model comparison</div>
+        <div class="topic-item"><strong>Neural Networks</strong>Architecture choices for fraud classification, embedding layers</div>
+        <div class="topic-item"><strong>AUC / KS Validation</strong>Validation frameworks, threshold optimization, lift curves</div>
+        <div class="topic-item"><strong>Drift Detection</strong>Distribution shift monitoring, automated alert triggers</div>
+        <div class="topic-item"><strong>Model Recalibration</strong>Scheduled retraining, incremental updates, version management</div>
+        <div class="topic-item"><strong>AWS Bedrock Agent</strong>Claude/Llama NLP agent for fraud case natural language queries</div>
+        <div class="topic-item"><strong>Production Deployment</strong>AWS ECS, Kafka integration, sub-300ms scoring architecture</div>
+      </div>
+    </div>
   </main>
+
+  <footer class="footer" style="margin-top:0;">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand"><div class="nav-logo">JR</div><span>Maligireddy Jalendar Reddy</span></div>
+        <p class="footer-copy">© <span id="year"></span> Maligireddy Jalendar Reddy</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>var yr=document.getElementById('year');if(yr)yr.textContent=new Date().getFullYear();</script>
 </body>
 </html>

@@ -3,289 +3,919 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jalendar Reddy Maligireddy | Senior Data Scientist & Fraud Model Developer</title>
-  <meta name="description" content="Senior Data Scientist and Fraud Model Developer specializing in production fraud ML, AML/KYC risk, AWS deployment, model monitoring, and AI-assisted fraud operations." />
+
+  <!-- ═══ SEO & ATS ═══════════════════════════════════════════════ -->
+  <title>Maligireddy Jalendar Reddy | Senior Data Scientist & Fraud ML Developer | AML/KYC | AWS</title>
+  <meta name="description" content="Senior Data Scientist & Fraud Model Developer with 8+ years experience in AML, KYC, production ML, XGBoost, LightGBM, Apache Kafka, AWS. Prevented $1M+ annual fraud. New Jersey, USA." />
+  <meta name="keywords" content="Senior Data Scientist, Fraud Model Developer, AML, KYC, Machine Learning, XGBoost, LightGBM, Python, AWS, Apache Kafka, Snowflake, OFAC, LexisNexis, IFM-X, Graph Fraud Detection, Actimize, Fraud Detection, AML/KYC, Production ML, Model Risk, Drift Detection, AWS Bedrock, Real-Time ML, Fintech, Banking, Risk Modeling, Data Science, New Jersey" />
+  <meta name="author" content="Maligireddy Jalendar Reddy" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://jalendar10.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Maligireddy Jalendar Reddy | Senior Data Scientist & Fraud ML Developer" />
+  <meta property="og:description" content="8+ years advanced quantitative modeling. Prevented $1M+ annual fraud. Expert in AML/KYC, XGBoost, AWS production ML, Apache Kafka." />
+  <meta property="og:url" content="https://jalendar10.github.io/" />
+  <meta property="og:site_name" content="Jalendar Reddy Portfolio" />
+  <meta property="profile:first_name" content="Jalendar" />
+  <meta property="profile:last_name" content="Reddy Maligireddy" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Maligireddy Jalendar Reddy | Senior Data Scientist & Fraud ML" />
+  <meta name="twitter:description" content="8+ years production ML fraud modeling. AML/KYC expert. $1M+ fraud prevented. XGBoost, AWS, Kafka." />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Maligireddy Jalendar Reddy",
+    "alternateName": "Jalendar Reddy",
+    "jobTitle": "Senior Data Scientist & Fraud Model Developer",
+    "email": "jmaligireddy97@gmail.com",
+    "url": "https://jalendar10.github.io/",
+    "address": { "@type": "PostalAddress", "addressRegion": "NJ", "addressCountry": "US" },
+    "sameAs": ["https://www.linkedin.com/in/jalendarreddymaligireddy/", "https://github.com/Jalendar10"],
+    "knowsAbout": ["Fraud Detection","Machine Learning","AML","KYC","XGBoost","LightGBM","Python","AWS","Apache Kafka","Snowflake","OFAC","LexisNexis","Graph Fraud Detection","Actimize","IFM-X","Model Risk Management"],
+    "alumniOf": [
+      { "@type": "EducationalOrganization", "name": "University of the Cumberlands" },
+      { "@type": "EducationalOrganization", "name": "University of North Texas" }
+    ],
+    "worksFor": { "@type": "Organization", "name": "Fiserv" },
+    "hasCredential": [
+      { "@type": "EducationalOccupationalCredential", "name": "AWS Certified Cloud Practitioner" },
+      { "@type": "EducationalOccupationalCredential", "name": "Microsoft Azure Data Fundamentals" }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#home" aria-label="Jalendar Reddy home">
-        <span class="brand-mark">JR</span>
+
+  <!-- ═══ NAVBAR ════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-brand" aria-label="Jalendar Reddy home">
+        <div class="nav-logo" aria-hidden="true">JR</div>
         <span>Jalendar Reddy</span>
       </a>
-      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="nav-links">
-        <a href="#workstreams">Workstreams</a>
-        <a href="#experience">Experience</a>
-        <a href="#github">GitHub</a>
-        <a href="#ios">iOS</a>
-        <a href="#contact">Contact</a>
+      <div class="nav-links" id="navLinks" role="menubar">
+        <a href="#about"      class="nav-link" role="menuitem">About</a>
+        <a href="#experience" class="nav-link" role="menuitem">Experience</a>
+        <a href="#projects"   class="nav-link" role="menuitem">Projects</a>
+        <a href="#skills"     class="nav-link" role="menuitem">Skills</a>
+        <a href="#education"  class="nav-link" role="menuitem">Education</a>
+        <a href="#contact"    class="nav-link" role="menuitem">Contact</a>
       </div>
-    </nav>
-  </header>
+      <div class="nav-end">
+        <a href="assets/Jalendar_Reddy_Senior_DS_Fraud_Model.pdf" download class="nav-download">Download CV</a>
+        <button class="nav-burger" id="navBurger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
 
   <main>
-    <section id="home" class="hero">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Senior Data Scientist & Fraud Model Developer</p>
-        <h1>Production fraud ML, AML/KYC risk, and AI systems built for regulated operations.</h1>
-        <p class="hero-summary">
-          Resume-grounded portfolio for Maligireddy Jalendar Reddy: 8+ years of advanced quantitative modeling experience,
-          5+ years owning production ML fraud models, and hands-on delivery across AWS, Kafka, model monitoring, and fraud operations.
-        </p>
-        <div class="hero-actions" aria-label="Primary actions">
-          <a class="btn primary" href="assets/Jalendar_Reddy_Senior_DS_Fraud_Model.pdf" download>Download PDF</a>
-          <a class="btn secondary" href="assets/Jalendar_Reddy_Senior_DS_Fraud_Model.docx" download>Download DOCX</a>
-          <a class="btn ghost" href="https://github.com/Jalendar10" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn ghost" href="https://linkedin.com/in/jalendar-reddy" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
 
-      <div class="portrait-stage reveal" aria-label="Professional profile image and operating metrics">
-        <div class="portrait-ring">
-          <img src="assets/jalendar-reddy-headshot.png" alt="Jalendar Reddy professional headshot" />
-        </div>
-        <div class="metric-orbit orbit-one">
-          <strong>2M+</strong>
-          <span>transactions/day</span>
-        </div>
-        <div class="metric-orbit orbit-two">
-          <strong>&lt;300ms</strong>
-          <span>scoring latency</span>
-        </div>
-      </div>
-    </section>
+    <!-- ═══ HERO ════════════════════════════════════════════════════ -->
+    <section id="hero" class="hero" aria-label="Introduction">
+      <canvas id="particleCanvas" aria-hidden="true"></canvas>
+      <div class="hero-blob blob-1" aria-hidden="true"></div>
+      <div class="hero-blob blob-2" aria-hidden="true"></div>
+      <div class="hero-blob blob-3" aria-hidden="true"></div>
+      <div class="hero-inner">
 
-    <section class="signal-strip" aria-label="Resume highlights">
-      <div class="signal-item reveal">
-        <span>$1M+</span>
-        <p>projected annual fraud loss prevented</p>
-      </div>
-      <div class="signal-item reveal">
-        <span>&lt;0.5%</span>
-        <p>false positive rate sustained in real-time stop-loss prevention</p>
-      </div>
-      <div class="signal-item reveal">
-        <span>1,000+</span>
-        <p>precision-tuned fraud rules across 40+ client portfolios</p>
-      </div>
-      <div class="signal-item reveal">
-        <span>40%</span>
-        <p>manual case review time reduction with AWS Bedrock AI agent</p>
-      </div>
-    </section>
+        <div class="hero-copy">
+          <div class="hero-badge reveal" aria-label="Job status">
+            <span class="badge-dot" aria-hidden="true"></span>
+            Available · Senior DS &amp; Fraud ML Roles · New Jersey, USA
+          </div>
 
-    <section id="workstreams" class="section">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Scrollable workstreams</p>
-        <h2>AML, AI/ML, design, GitHub engineering, and iOS surfaces ready for deeper pages.</h2>
-      </div>
-      <div class="workstream-grid">
-        <a class="workstream-card reveal" href="pages/aml.html">
-          <span>01</span>
-          <h3>AML & Fraud Systems</h3>
-          <p>IFM-X, OFAC, WLF, LexisNexis, KYC/CDD, SAR/FinCEN/CTR, Actimize AIS/RCM, model-risk review, and production escalation workflows.</p>
-        </a>
-        <a class="workstream-card reveal" href="pages/ai-ml.html">
-          <span>02</span>
-          <h3>AI / ML Engineering</h3>
-          <p>Python, XGBoost, LightGBM, Gradient Boosting, Random Forests, neural networks, clustering, regression, AUC/KS, drift detection, and recalibration.</p>
-        </a>
-        <a class="workstream-card reveal" href="pages/design.html">
-          <span>03</span>
-          <h3>Design & Dashboards</h3>
-          <p>Tableau, Power BI, RCM operational dashboards, model performance visibility, and stakeholder-ready business impact reporting.</p>
-        </a>
-        <a class="workstream-card reveal" href="pages/ios.html">
-          <span>04</span>
-          <h3>iOS App</h3>
-          <p>ConnectSpend iOS App is listed in the resume credentials. This page is reserved for the app story, screenshots, and release notes.</p>
-        </a>
-      </div>
-    </section>
+          <h1 class="hero-name reveal">
+            <span>Maligireddy</span>
+            <span class="name-accent">Jalendar Reddy</span>
+          </h1>
 
-    <section id="experience" class="section split-section">
-      <div class="section-heading sticky-heading reveal">
-        <p class="eyebrow">Experience from resume</p>
-        <h2>Fraud model ownership from data aggregation through production monitoring.</h2>
-        <p>
-          The experience content below is pulled from the supplied resume document and kept focused on stated roles, dates, tools, and outcomes.
-        </p>
-      </div>
-      <div class="timeline">
-        <article class="role-card reveal">
-          <div class="role-top">
-            <div>
-              <h3>Fiserv</h3>
-              <p>Senior Data Scientist & Fraud Model Developer</p>
+          <p class="hero-role reveal" aria-live="polite">
+            Senior Data Scientist &nbsp;·&nbsp;
+            <span class="role-cycle" id="roleCycle">Fraud Model Developer</span>
+          </p>
+
+          <p class="hero-bio reveal">
+            8+ years of advanced quantitative modeling, 5+ years owning <strong>production ML fraud models</strong>
+            in fintech and banking. At Fiserv, built end-to-end fraud ML processing
+            <strong>2M+ transactions/day</strong> at sub-300ms latency, preventing
+            <strong>$1M+ in annual fraud loss</strong>.
+            Expert in XGBoost, AML/KYC risk, graph fraud detection, and AWS production deployment.
+          </p>
+
+          <div class="hero-actions reveal">
+            <a href="assets/Jalendar_Reddy_Senior_DS_Fraud_Model.pdf" download class="btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download Resume
+            </a>
+            <a href="https://linkedin.com/in/jalendarreddymaligireddy/" target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn</a>
+            <a href="mailto:jmaligireddy97@gmail.com" class="btn-secondary">Email Me</a>
+          </div>
+
+          <div class="hero-stats reveal" role="list" aria-label="Key achievements">
+            <div class="hstat" role="listitem">
+              <span class="hstat-num" data-count="1" data-prefix="$" data-suffix="M+">$0</span>
+              <span class="hstat-lbl">Annual Fraud Prevented</span>
             </div>
-            <span>May 2024 - Present</span>
-          </div>
-          <ul>
-            <li>Owned full fraud model lifecycle across Oracle, PostgreSQL, Snowflake, AWS Glue ETL, feature engineering, model training, validation, AWS ECS deployment, monitoring, and recalibration.</li>
-            <li>Engineered Kafka-based real-time fraud stop-loss prevention processing 2M+ transactions/day at sub-300ms latency for ACH, Wire, Zelle, and Payee transactions.</li>
-            <li>Established AUC/KS drift checks, Tableau/Power BI dashboards, automated recalibration triggers, and escalation protocols across 40+ client configurations.</li>
-            <li>Developed an AWS Bedrock AI agent using Claude/Llama for natural-language alert and case data queries, reducing manual case review time by about 40%.</li>
-          </ul>
-        </article>
-
-        <article class="role-card reveal">
-          <div class="role-top">
-            <div>
-              <h3>Mukegroup</h3>
-              <p>Software Engineer - AML & Fraud Model Development</p>
+            <div class="hstat-sep" aria-hidden="true"></div>
+            <div class="hstat" role="listitem">
+              <span class="hstat-num" data-count="2" data-suffix="M+/day">0</span>
+              <span class="hstat-lbl">Transactions Processed</span>
             </div>
-            <span>Jan 2023 - Apr 2024</span>
-          </div>
-          <ul>
-            <li>Designed, validated, and monitored IFM-X transaction monitoring models end-to-end.</li>
-            <li>Integrated OFAC, LexisNexis, and WLF as real-time external risk signals in decisioning flows.</li>
-            <li>Built Tableau and RCM operational dashboards for model performance, business metrics, and P1/P2 escalation handling.</li>
-          </ul>
-        </article>
-
-        <article class="role-card reveal">
-          <div class="role-top">
-            <div>
-              <h3>Tata Consultancy Services</h3>
-              <p>Assistant System Engineer - Fraud & AML Systems</p>
+            <div class="hstat-sep" aria-hidden="true"></div>
+            <div class="hstat" role="listitem">
+              <span class="hstat-num" data-prefix="&lt;" data-count="300" data-suffix="ms">&lt;0</span>
+              <span class="hstat-lbl">Scoring Latency</span>
             </div>
-            <span>Jan 2020 - Jul 2021</span>
-          </div>
-          <ul>
-            <li>Implemented IFM transaction monitoring models with OFAC/WLF external risk data integration.</li>
-            <li>Engineered PL/SQL extraction pipelines for regulatory reporting and automated batch scoring via AutoSys.</li>
-            <li>Supported DEV, UAT, and PROD model validation, QA regression cycles, and release readiness.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Technical stack</p>
-        <h2>Tools and domains listed in the supplied resume.</h2>
-      </div>
-      <div class="skill-grid">
-        <article class="skill-card reveal">
-          <h3>ML / Modeling</h3>
-          <p>Python, XGBoost, LightGBM, Gradient Boosting, Random Forests, Decision Trees, Neural Networks, Clustering, Regression, AUC, KS, Precision/Recall, F1, Drift Detection, Model Recalibration</p>
-        </article>
-        <article class="skill-card reveal">
-          <h3>Data & Visualization</h3>
-          <p>SQL, Snowflake, PostgreSQL, Oracle, AWS Glue ETL, Tableau, Power BI, Pandas, NumPy, Spark</p>
-        </article>
-        <article class="skill-card reveal">
-          <h3>Cloud / Infrastructure</h3>
-          <p>AWS ECS, Bedrock, Glue, RDS Aurora, Lambda, SQS/SNS, CloudWatch, Kafka, Redis, Docker, Kubernetes, Jenkins, GitLab CI/CD</p>
-        </article>
-        <article class="skill-card reveal">
-          <h3>Fraud / AML Domain</h3>
-          <p>OFAC, LexisNexis, Neustar, Experian, Graph Fraud Detection, SAR, FinCEN, CTR, KYC, CDD, AML, BSA, IFM-X, SAM, HRM, Actimize AIS/RCM, Java 21, Spring Boot</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="github" class="section github-section">
-      <div class="section-heading reveal">
-        <p class="eyebrow">GitHub repositories</p>
-        <h2>Public repositories from github.com/Jalendar10.</h2>
-        <p>Fetched from the GitHub API on June 5, 2026. Cards link directly to each public repository.</p>
-      </div>
-      <div class="repo-toolbar reveal">
-        <a class="btn primary" href="https://github.com/Jalendar10" target="_blank" rel="noopener">Open GitHub Profile</a>
-        <span>19 public repositories shown</span>
-      </div>
-      <div class="repo-grid" id="repoGrid" aria-label="GitHub repositories"></div>
-
-      <div class="commit-panel reveal">
-        <div>
-          <p class="eyebrow">Recent public commits</p>
-          <h3>Latest activity from active repositories</h3>
-        </div>
-        <div class="commit-list" id="commitList"></div>
-      </div>
-    </section>
-
-    <section id="ios" class="section app-section">
-      <div class="section-heading reveal">
-        <p class="eyebrow">iOS App</p>
-        <h2>ConnectSpend iOS App surface prepared for App Store details.</h2>
-        <p>
-          The supplied resume lists ConnectSpend iOS App under certifications and honors. This website includes a dedicated app page and a visual app panel for screenshots, release notes, and product details when you are ready to add them.
-        </p>
-      </div>
-      <div class="app-showcase reveal">
-        <div class="phone-shell" aria-label="ConnectSpend iOS app preview placeholder">
-          <div class="phone-top"></div>
-          <div class="phone-screen">
-            <span>ConnectSpend</span>
-            <strong>iOS App</strong>
-            <p>App Store credential from resume</p>
+            <div class="hstat-sep" aria-hidden="true"></div>
+            <div class="hstat" role="listitem">
+              <span class="hstat-num" data-count="1000" data-suffix="+">0</span>
+              <span class="hstat-lbl">Fraud Rules Managed</span>
+            </div>
           </div>
         </div>
-        <div class="app-copy">
-          <h3>Prepared page route</h3>
-          <p>Use the iOS page for app screenshots, App Store link, feature breakdown, privacy notes, and technical architecture.</p>
-          <a class="btn secondary" href="pages/ios.html">Open iOS Page</a>
+
+        <!-- Orbit photo -->
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="orbit-zone" id="orbitZone">
+            <div class="photo-wrap">
+              <div class="photo-ring r1"></div>
+              <div class="photo-ring r2"></div>
+              <div class="photo-frame">
+                <img src="assets/jalendar-reddy-headshot.png" alt="Maligireddy Jalendar Reddy — Senior Data Scientist" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ ABOUT ════════════════════════════════════════════════════ -->
+    <section id="about" class="section bg-alt" aria-label="About">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-tag">Professional Focus</p>
+          <h2>AML Systems · AI/ML Engineering · Production Fraud Models</h2>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-text reveal">
+            <p>
+              Senior Data Scientist and Fraud Model Developer with deep expertise in production ML fraud
+              systems, AML/KYC risk, and quantitative modeling for regulated financial environments.
+              At Fiserv, I own the complete fraud model lifecycle — from problem framing and feature engineering
+              across Oracle, PostgreSQL, and Snowflake, through model training and validation,
+              to AWS ECS deployment and ongoing performance management across 40+ client portfolios.
+            </p>
+            <p>
+              M.S. Data Science, GPA 3.6 — University of North Texas &nbsp;·&nbsp;
+              Doctoral Candidate, Information Technology — University of the Cumberlands &nbsp;·&nbsp;
+              IEEE SMC 2026 Peer Reviewer.
+            </p>
+            <div class="about-pills" role="list" aria-label="Domain areas">
+              <span role="listitem">Fraud ML</span>
+              <span role="listitem">AML / KYC</span>
+              <span role="listitem">AWS Production</span>
+              <span role="listitem">Model Governance</span>
+              <span role="listitem">Real-Time Systems</span>
+              <span role="listitem">Graph Analytics</span>
+            </div>
+          </div>
+
+          <div class="expertise-grid">
+            <div class="exp-card reveal">
+              <div class="exp-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3>AML &amp; Fraud Systems</h3>
+              <p>IFM-X, OFAC, LexisNexis, WLF, KYC/CDD, SAR/FinCEN/CTR, Actimize AIS/RCM, graph-based network fraud detection, synthetic identity, account takeover.</p>
+              <a href="pages/aml.html" class="exp-link">Deep Dive →</a>
+            </div>
+            <div class="exp-card reveal">
+              <div class="exp-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+              </div>
+              <h3>AI / ML Engineering</h3>
+              <p>XGBoost, LightGBM, Gradient Boosting, Random Forests, Neural Networks, AUC/KS validation, drift detection, model recalibration, AWS Bedrock AI agents.</p>
+              <a href="pages/ai-ml.html" class="exp-link">Deep Dive →</a>
+            </div>
+            <div class="exp-card reveal">
+              <div class="exp-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <h3>Real-Time Production</h3>
+              <p>Apache Kafka, AWS ECS/Bedrock/Glue/RDS Aurora, sub-300ms ML scoring, real-time ACH/Wire/Zelle fraud stop-loss prevention, Docker, Kubernetes.</p>
+            </div>
+            <div class="exp-card reveal">
+              <div class="exp-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </div>
+              <h3>Model Risk &amp; Governance</h3>
+              <p>AUC/KS drift detection, Tableau/Power BI dashboards, automated recalibration triggers, regulatory compliance (BSA, AML), escalation protocols across 40+ client portfolios.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section split-section">
-      <div class="section-heading sticky-heading reveal">
-        <p class="eyebrow">Education & recognition</p>
-        <h2>Credentials from the supplied resume.</h2>
-      </div>
-      <div class="credential-grid">
-        <article class="credential-card reveal">
-          <h3>Doctor of Information Technology</h3>
-          <p>University of the Cumberlands</p>
-          <span>Doctoral Candidate, 2023 - Present</span>
-        </article>
-        <article class="credential-card reveal">
-          <h3>M.S. Data Science</h3>
-          <p>University of North Texas</p>
-          <span>GPA 3.6 / 4.0, 2021 - 2022</span>
-        </article>
-        <article class="credential-card reveal">
-          <h3>B.Tech</h3>
-          <p>First Rank and 100% Merit Scholarship</p>
-          <span>Pre-2020</span>
-        </article>
-        <article class="credential-card reveal">
-          <h3>Certifications & Honors</h3>
-          <p>Microsoft Certified: Azure Data Fundamentals, Employee of the Year at Tata Consultancy Services, IEEE SMC 2026 Peer Reviewer, ConnectSpend iOS App, National Mathematics Olympiad</p>
-          <span>Resume credentials</span>
-        </article>
+    <!-- ═══ EXPERIENCE ════════════════════════════════════════════════ -->
+    <section id="experience" class="section" aria-label="Work experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-tag">Career History</p>
+          <h2>Professional Experience</h2>
+          <p class="section-sub">Click any card to reveal full details.</p>
+        </div>
+
+        <div class="exp-timeline">
+
+          <!-- Fiserv flip card -->
+          <div class="flip-card flip-lg reveal" aria-label="Fiserv experience card">
+            <div class="flip-inner">
+
+              <article class="flip-front">
+                <div class="fc-head">
+                  <div>
+                    <h3>Fiserv</h3>
+                    <span class="fc-loc">New Jersey, USA</span>
+                  </div>
+                  <div class="fc-meta">
+                    <span class="fc-role">Senior Data Scientist &amp; Fraud Model Developer</span>
+                    <span class="fc-date">May 2024 – Present</span>
+                  </div>
+                </div>
+                <div class="fc-kpis" role="list" aria-label="Key metrics">
+                  <div class="kpi" role="listitem">
+                    <strong>$1M+</strong><span>Fraud Prevented / yr</span>
+                  </div>
+                  <div class="kpi" role="listitem">
+                    <strong>2M+/day</strong><span>Transactions</span>
+                  </div>
+                  <div class="kpi" role="listitem">
+                    <strong>&lt;300ms</strong><span>Latency</span>
+                  </div>
+                  <div class="kpi" role="listitem">
+                    <strong>&lt;0.5%</strong><span>False Positive</span>
+                  </div>
+                </div>
+                <ul class="fc-brief">
+                  <li>End-to-end fraud model lifecycle ownership — problem framing to AWS ECS production deployment across 40+ client portfolios.</li>
+                  <li>Kafka-based real-time stop-loss prevention: 2M+ transactions/day at sub-300ms latency, preventing ~$1M+ projected annual fraud losses.</li>
+                  <li>Built 1,000+ precision-tuned fraud rules; graph-based network fraud detection; AWS Bedrock AI agent reducing manual case review 40%.</li>
+                  <li>Model monitoring: AUC/KS drift detection, Tableau/Power BI dashboards, CloudWatch/Splunk/Dynatrace escalation handling within SLA.</li>
+                </ul>
+                <div class="fc-tags" role="list" aria-label="Technologies">
+                  <span role="listitem">XGBoost</span><span role="listitem">LightGBM</span><span role="listitem">Kafka</span>
+                  <span role="listitem">AWS ECS</span><span role="listitem">Bedrock</span><span role="listitem">Snowflake</span>
+                  <span role="listitem">AML/KYC</span><span role="listitem">Graph Fraud</span>
+                </div>
+                <button class="fc-flip-btn" aria-label="Show full details">
+                  Full Details
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </article>
+
+              <article class="flip-back">
+                <div class="fb-head">
+                  <div>
+                    <h3>Fiserv — Full Details</h3>
+                    <span class="fc-role">Senior Data Scientist &amp; Fraud Model Developer &nbsp;·&nbsp; May 2024 – Present</span>
+                  </div>
+                </div>
+                <div class="fb-groups">
+                  <div class="fb-group">
+                    <h4>End-to-End Fraud Model Ownership</h4>
+                    <ul>
+                      <li>Owned full fraud model lifecycle: problem framing → dataset aggregation from <strong>Oracle, PostgreSQL, Snowflake</strong> → feature engineering → model training (XGBoost, LightGBM, Gradient Boosting, Random Forests) → validation (AUC, KS, precision/recall, F1) → <strong>AWS ECS deployment</strong> → monitoring and recalibration — sole accountability for fraud loss reduction outcomes.</li>
+                      <li>Designed scalable, reusable modeling frameworks synthesizing data from Oracle, PostgreSQL, Snowflake, AWS Glue ETL — reducing model development cycle time <strong>~30%</strong>.</li>
+                      <li>Analyzed Personal Loan, Payment, and KYC/CDD product lines to identify fraud loss drivers; translated findings into model improvements and strategy adjustments for senior stakeholders.</li>
+                    </ul>
+                  </div>
+                  <div class="fb-group">
+                    <h4>Real-Time Fraud Stop-Loss Prevention</h4>
+                    <ul>
+                      <li><strong>Apache Kafka</strong>-based real-time fraud stop-loss processing <strong>2M+ transactions/day</strong> at sub-300ms latency — ML scoring evaluates every ACH, Wire, Zelle, and Payee transaction in-flight; automated halt rules prevent suspicious transactions before settlement, preventing <strong>~$1M+ projected annual fraud losses</strong> at <strong>&lt;0.5% false positive rate</strong>.</li>
+                      <li>Built and maintained <strong>1,000+ precision-tuned fraud rules</strong> across 40+ client portfolios: velocity thresholds, cash patterns, MCC/SIC codes, geo-risk zones, split-transaction detection, counterparty network scoring.</li>
+                      <li>Conducted trade-off analysis between fraud loss mitigation, customer experience, and regulatory guardrails; influenced risk tolerance decisions for 40+ clients by presenting AUC/KS trends, false positive rates, and loss exposure to Risk, Fraud Ops, Finance, and Compliance.</li>
+                    </ul>
+                  </div>
+                  <div class="fb-group">
+                    <h4>Model Monitoring &amp; Risk Management</h4>
+                    <ul>
+                      <li>Established model monitoring standards: scheduled AUC/KS drift detection checks, Tableau/Power BI dashboards, automated recalibration triggers, and escalation protocols across 40+ client configurations.</li>
+                      <li>Diagnosed model performance degradation using <strong>CloudWatch, Splunk, and Dynatrace</strong>; implemented recalibration solutions and communicated remediation plans to business and compliance stakeholders within SLA.</li>
+                      <li>Productionized models in AWS (ECS, Bedrock, Glue, RDS Aurora) — reducing time-to-production for new fraud models by <strong>~30%</strong> through deployment standards, validation gates, and post-production monitoring checkpoints.</li>
+                    </ul>
+                  </div>
+                  <div class="fb-group">
+                    <h4>AI Innovation &amp; Cross-Functional Leadership</h4>
+                    <ul>
+                      <li>Built <strong>graph-based network fraud detection layer</strong>: traversed account-to-principal associations, detected split transactions, traced funds across related accounts, and surfaced suspicious counterparty networks — enriching ML feature sets with structural relationship signals.</li>
+                      <li>Developed <strong>AWS Bedrock AI agent (Claude/Llama)</strong> enabling fraud analysts to query alert and case data in natural language — reduced manual case review time <strong>~40%</strong>, improved decision traceability, and accelerated escalation resolution.</li>
+                      <li>Investigated external risk data providers (Neustar, LexisNexis, Experian, G2, OFAC) and emerging fraud patterns (synthetic identity, ATO, first-party fraud); translated findings into prioritized roadmap items evaluated by fraud loss ROI and regulatory impact.</li>
+                    </ul>
+                  </div>
+                </div>
+                <button class="fc-flip-btn is-back" aria-label="Go back to summary">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                  Back to Summary
+                </button>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Mukegroup flip card -->
+          <div class="flip-card reveal" aria-label="Mukegroup experience card">
+            <div class="flip-inner">
+
+              <article class="flip-front">
+                <div class="fc-head">
+                  <div>
+                    <h3>Mukegroup</h3>
+                    <span class="fc-loc">New Jersey, USA</span>
+                  </div>
+                  <div class="fc-meta">
+                    <span class="fc-role">Software Engineer — AML &amp; Fraud Model Development</span>
+                    <span class="fc-date">Jan 2023 – Apr 2024</span>
+                  </div>
+                </div>
+                <ul class="fc-brief">
+                  <li>Designed, validated, and monitored IFM-X transaction monitoring models end-to-end with precision/recall trade-off analysis.</li>
+                  <li>Integrated OFAC, LexisNexis, and WLF as real-time external risk signals in AML decisioning flows.</li>
+                  <li>Built Tableau/RCM operational dashboards; managed P1/P2 production escalations with structured root-cause analysis.</li>
+                </ul>
+                <div class="fc-tags">
+                  <span>IFM-X</span><span>OFAC</span><span>LexisNexis</span>
+                  <span>Tableau</span><span>Actimize RCM</span><span>AML</span>
+                </div>
+                <button class="fc-flip-btn">
+                  Full Details
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </article>
+
+              <article class="flip-back">
+                <div class="fb-head">
+                  <div>
+                    <h3>Mukegroup — Full Details</h3>
+                    <span class="fc-role">Software Engineer — AML &amp; Fraud Model Development &nbsp;·&nbsp; Jan 2023 – Apr 2024</span>
+                  </div>
+                </div>
+                <div class="fb-groups">
+                  <div class="fb-group">
+                    <h4>AML Model Development &amp; Validation</h4>
+                    <ul>
+                      <li>Designed, validated, and monitored <strong>IFM-X transaction monitoring models</strong> end-to-end; conducted precision/recall trade-off analysis to minimize false positives while maintaining regulatory coverage.</li>
+                      <li>Integrated <strong>OFAC, LexisNexis, and WLF</strong> as real-time external risk signals in decisioning flows for AML compliance and sanctions screening.</li>
+                    </ul>
+                  </div>
+                  <div class="fb-group">
+                    <h4>Dashboards, Reporting &amp; Escalation Management</h4>
+                    <ul>
+                      <li>Partnered with Risk and Compliance teams on model risk reviews; built <strong>Tableau/RCM operational dashboards</strong> translating model performance into actionable business metrics for senior stakeholders.</li>
+                      <li>Managed <strong>P1/P2 production escalations</strong> with structured root-cause analysis and documented resolution playbooks ensuring SLA compliance.</li>
+                    </ul>
+                  </div>
+                </div>
+                <button class="fc-flip-btn is-back">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                  Back to Summary
+                </button>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- TCS flip card -->
+          <div class="flip-card reveal" aria-label="TCS experience card">
+            <div class="flip-inner">
+
+              <article class="flip-front">
+                <div class="fc-head">
+                  <div>
+                    <h3>Tata Consultancy Services</h3>
+                    <span class="fc-loc">India</span>
+                  </div>
+                  <div class="fc-meta">
+                    <span class="fc-role">Assistant System Engineer — Fraud &amp; AML Systems</span>
+                    <span class="fc-date">Jan 2020 – Jul 2021</span>
+                  </div>
+                </div>
+                <ul class="fc-brief">
+                  <li>Implemented IFM transaction monitoring models with OFAC/WLF external risk data integration.</li>
+                  <li>Engineered PL/SQL pipelines for SAR/FinCEN/CTR regulatory reporting; automated batch scoring via AutoSys across DEV/UAT/PROD.</li>
+                  <li>Awarded <strong>Employee of the Year</strong> — Tata Consultancy Services.</li>
+                </ul>
+                <div class="fc-tags">
+                  <span>IFM</span><span>OFAC</span><span>PL/SQL</span>
+                  <span>AutoSys</span><span>AML/BSA</span><span>SAR/CTR</span>
+                </div>
+                <button class="fc-flip-btn">
+                  Full Details
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </article>
+
+              <article class="flip-back">
+                <div class="fb-head">
+                  <div>
+                    <h3>Tata Consultancy Services — Full Details</h3>
+                    <span class="fc-role">Assistant System Engineer — Fraud &amp; AML Systems &nbsp;·&nbsp; Jan 2020 – Jul 2021, India</span>
+                  </div>
+                </div>
+                <div class="fb-groups">
+                  <div class="fb-group">
+                    <h4>Fraud &amp; AML Systems Implementation</h4>
+                    <ul>
+                      <li>Implemented <strong>IFM transaction monitoring models</strong> with OFAC/WLF external risk data integration for regulatory compliance and sanctions screening.</li>
+                      <li>Engineered <strong>PL/SQL data extraction pipelines</strong> for SAR/FinCEN/CTR regulatory reporting across multiple regulatory jurisdictions.</li>
+                      <li>Automated batch scoring jobs via <strong>AutoSys</strong> across DEV/UAT/PROD environments; supported model validation and QA regression cycles for release readiness.</li>
+                    </ul>
+                  </div>
+                  <div class="fb-group">
+                    <h4>Recognition</h4>
+                    <ul>
+                      <li>Awarded <strong>Employee of the Year</strong> at Tata Consultancy Services for outstanding contributions to fraud and AML systems delivery.</li>
+                    </ul>
+                  </div>
+                </div>
+                <button class="fc-flip-btn is-back">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                  Back to Summary
+                </button>
+              </article>
+
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="section contact-section">
-      <div class="reveal">
-        <p class="eyebrow">Contact</p>
-        <h2>Senior data science, fraud modeling, AML/KYC, and ML platform work.</h2>
-      </div>
-      <div class="contact-panel reveal">
-        <a href="mailto:jmaligireddy97@gmail.com">jmaligireddy97@gmail.com</a>
-        <a href="tel:+19407831342">+1 (940) 783-1342</a>
-        <a href="https://linkedin.com/in/jalendar-reddy" target="_blank" rel="noopener">LinkedIn Profile</a>
-        <a href="https://github.com/Jalendar10" target="_blank" rel="noopener">GitHub Profile</a>
-        <a href="assets/Jalendar_Reddy_Senior_DS_Fraud_Model.pdf" download>Download Resume PDF</a>
+    <!-- ═══ PROJECTS ══════════════════════════════════════════════════ -->
+    <section id="projects" class="section bg-alt" aria-label="Projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-tag">Featured Projects</p>
+          <h2>Compliance Automation, Fraud ML &amp; AI Systems</h2>
+          <p class="section-sub">Production systems, compliance platforms, and AI-powered tooling built and deployed.</p>
+        </div>
+
+        <div class="proj-carousel-wrap">
+          <div class="proj-carousel" id="projCarousel" aria-label="Projects carousel">
+
+          <!-- GRC Compliance System -->
+          <div class="proj-card reveal">
+            <div class="proj-header">
+              <div class="proj-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <span class="proj-cat">Compliance &amp; Governance</span>
+                <h3>GRC Compliance Automation System</h3>
+              </div>
+            </div>
+            <p class="proj-desc">
+              TypeScript-based Governance, Risk &amp; Compliance (GRC) automation platform for financial services.
+              Automates compliance workflows, risk assessments, and regulatory reporting pipelines.
+              Designed for AML/BSA regulatory environments with real-time monitoring and alert generation.
+            </p>
+
+            <!-- Architecture Diagram -->
+            <div class="arch-diagram" role="img" aria-label="GRC System architecture diagram">
+              <div class="arch-row">
+                <div class="arch-node source">Policy &amp; Controls</div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-node engine">Risk Engine</div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-node output">Control Assessment</div>
+              </div>
+              <div class="arch-row">
+                <div class="arch-node source">OFAC / Reg Data</div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-node engine">Compliance Check</div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-node output">SAR / CTR Report</div>
+              </div>
+              <div class="arch-connector" aria-hidden="true">
+                <div class="arch-vline"></div>
+              </div>
+            </div>
+
+            <div class="proj-tags">
+              <span>TypeScript</span><span>GRC</span><span>AML/BSA</span>
+              <span>OFAC</span><span>Compliance Automation</span><span>Risk Assessment</span>
+            </div>
+            <a href="https://github.com/Jalendar10/GRC_System" target="_blank" rel="noopener noreferrer" class="proj-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              View on GitHub
+            </a>
+          </div>
+
+          <!-- Real-Time Fraud ML Pipeline -->
+          <div class="proj-card reveal">
+            <div class="proj-header">
+              <div class="proj-icon proj-icon-cyan">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div>
+                <span class="proj-cat">Production ML System · Fiserv</span>
+                <h3>Real-Time Fraud ML Stop-Loss Pipeline</h3>
+              </div>
+            </div>
+            <p class="proj-desc">
+              End-to-end production ML fraud prevention system processing 2M+ transactions/day at sub-300ms latency.
+              XGBoost and LightGBM models score every ACH, Wire, Zelle, and Payee transaction in-flight via Apache Kafka.
+              Automated halt rules block suspicious transactions before settlement, preventing ~$1M+ annual fraud loss.
+            </p>
+
+            <!-- Architecture Diagram -->
+            <div class="arch-diagram" role="img" aria-label="Fraud ML Pipeline architecture">
+              <div class="arch-row">
+                <div class="arch-node source">ACH / Wire / Zelle</div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-node engine">Apache Kafka</div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-node engine">XGBoost / LGB</div>
+              </div>
+              <div class="arch-row">
+                <div class="arch-node source">OFAC / WLF APIs</div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-node engine">Rule Engine</div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-node output">Block / Allow / Alert</div>
+              </div>
+            </div>
+
+            <div class="proj-tags">
+              <span>Apache Kafka</span><span>XGBoost</span><span>LightGBM</span>
+              <span>AWS ECS</span><span>Python</span><span>Real-Time ML</span>
+            </div>
+            <span class="proj-label">Production System · 2M+ txn/day</span>
+          </div>
+
+          <!-- AWS Bedrock AI Fraud Agent -->
+          <div class="proj-card reveal">
+            <div class="proj-header">
+              <div class="proj-icon proj-icon-green">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div>
+                <span class="proj-cat">Generative AI · AWS Bedrock</span>
+                <h3>AI-Powered Fraud Case Review Agent</h3>
+              </div>
+            </div>
+            <p class="proj-desc">
+              AWS Bedrock AI agent (Claude/Llama) enabling fraud analysts to query alert and case data in natural language.
+              Reduced manual case review time by ~40%, improved decision traceability, and accelerated escalation resolution
+              across fraud operations teams. Integrates with live alert databases and case management systems.
+            </p>
+
+            <!-- Architecture Diagram -->
+            <div class="arch-diagram" role="img" aria-label="AWS Bedrock AI Agent architecture">
+              <div class="arch-row">
+                <div class="arch-node source">Fraud Alerts / Cases</div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-node engine">AWS Bedrock Agent</div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-node output">NL Query Response</div>
+              </div>
+              <div class="arch-row">
+                <div class="arch-node source">Case DB / RDS Aurora</div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-node engine">Claude / Llama LLM</div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-node output">Decision Traceability</div>
+              </div>
+            </div>
+
+            <div class="proj-tags">
+              <span>AWS Bedrock</span><span>Claude AI</span><span>Llama</span>
+              <span>RDS Aurora</span><span>NLP</span><span>Fraud Ops</span>
+            </div>
+            <span class="proj-label">~40% reduction in case review time</span>
+          </div>
+
+          </div><!-- end .proj-carousel -->
+
+          <div class="proj-carousel-nav">
+            <button class="proj-nav-btn" id="projPrev" aria-label="Previous project">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="proj-dots" id="projDots" role="tablist" aria-label="Project slides">
+              <button class="proj-dot active" role="tab" aria-selected="true"  aria-label="Project 1" data-idx="0"></button>
+              <button class="proj-dot"        role="tab" aria-selected="false" aria-label="Project 2" data-idx="1"></button>
+              <button class="proj-dot"        role="tab" aria-selected="false" aria-label="Project 3" data-idx="2"></button>
+            </div>
+            <button class="proj-nav-btn" id="projNext" aria-label="Next project">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div><!-- end .proj-carousel-wrap -->
       </div>
     </section>
+
+    <!-- ═══ SKILLS ════════════════════════════════════════════════════ -->
+    <section id="skills" class="section" aria-label="Technical skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-tag">Technical Expertise</p>
+          <h2>Skills &amp; Technologies</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-cat reveal">
+            <div class="skill-cat-head">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              <h3>ML / Modeling</h3>
+            </div>
+            <div class="skill-chips" role="list">
+              <span role="listitem">Python</span><span role="listitem">XGBoost</span><span role="listitem">LightGBM</span>
+              <span role="listitem">Gradient Boosting</span><span role="listitem">Random Forests</span>
+              <span role="listitem">Decision Trees</span><span role="listitem">Neural Networks</span>
+              <span role="listitem">Clustering</span><span role="listitem">Regression</span>
+              <span role="listitem">AUC/KS</span><span role="listitem">Precision/Recall</span>
+              <span role="listitem">F1 Score</span><span role="listitem">Drift Detection</span>
+              <span role="listitem">Model Recalibration</span>
+            </div>
+          </div>
+          <div class="skill-cat reveal">
+            <div class="skill-cat-head">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              <h3>Data &amp; Visualization</h3>
+            </div>
+            <div class="skill-chips" role="list">
+              <span role="listitem">SQL</span><span role="listitem">Snowflake</span><span role="listitem">PostgreSQL</span>
+              <span role="listitem">Oracle</span><span role="listitem">AWS Glue ETL</span>
+              <span role="listitem">Tableau</span><span role="listitem">Power BI</span>
+              <span role="listitem">Pandas</span><span role="listitem">NumPy</span><span role="listitem">Apache Spark</span>
+            </div>
+          </div>
+          <div class="skill-cat reveal">
+            <div class="skill-cat-head">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+              <h3>Cloud / Infrastructure</h3>
+            </div>
+            <div class="skill-chips" role="list">
+              <span role="listitem">AWS ECS</span><span role="listitem">AWS Bedrock</span>
+              <span role="listitem">AWS Glue</span><span role="listitem">RDS Aurora</span>
+              <span role="listitem">Lambda</span><span role="listitem">SQS/SNS</span>
+              <span role="listitem">CloudWatch</span><span role="listitem">Apache Kafka</span>
+              <span role="listitem">Redis</span><span role="listitem">Docker</span>
+              <span role="listitem">Kubernetes</span><span role="listitem">Jenkins</span>
+              <span role="listitem">GitLab CI/CD</span><span role="listitem">Splunk</span><span role="listitem">Dynatrace</span>
+            </div>
+          </div>
+          <div class="skill-cat reveal">
+            <div class="skill-cat-head">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <h3>Fraud / AML Domain</h3>
+            </div>
+            <div class="skill-chips" role="list">
+              <span role="listitem">OFAC</span><span role="listitem">LexisNexis</span>
+              <span role="listitem">Neustar</span><span role="listitem">Experian</span>
+              <span role="listitem">Graph Fraud Detection</span><span role="listitem">SAR/FinCEN/CTR</span>
+              <span role="listitem">KYC</span><span role="listitem">CDD</span>
+              <span role="listitem">AML</span><span role="listitem">BSA</span>
+              <span role="listitem">IFM-X</span><span role="listitem">SAM</span>
+              <span role="listitem">HRM</span><span role="listitem">Actimize AIS/RCM</span>
+              <span role="listitem">Java 21</span><span role="listitem">Spring Boot</span>
+            </div>
+          </div>
+
+          <!-- Actimize Full-Width Card -->
+          <div class="skill-cat-full skill-cat reveal">
+            <div class="skill-cat-head">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <h3>NICE Actimize Platform</h3>
+            </div>
+
+            <div class="actimize-versions" role="list" aria-label="AIS versions">
+              <span role="listitem">AIS 4.21</span>
+              <span role="listitem">AIS 4.26</span>
+              <span role="listitem">AIS 4.29</span>
+              <span role="listitem">AIS 4.30</span>
+              <span role="listitem">AIS 4.34</span>
+            </div>
+
+            <div class="actimize-grid">
+              <div class="actimize-sub">
+                <h5>AIS Core Components</h5>
+                <div class="skill-chips">
+                  <span>Connector</span><span>Channel</span><span>Flow</span>
+                  <span>Functions</span><span>Remote Functions</span>
+                  <span>User Defined Functions</span><span>Active Tables</span>
+                  <span>XML</span><span>Execution Plans</span>
+                  <span>Custom Solution</span><span>Custom Packages</span>
+                  <span>Rule Context</span><span>Java Plugin</span>
+                </div>
+              </div>
+              <div class="actimize-sub">
+                <h5>ATCONE / RCM Web</h5>
+                <div class="skill-chips">
+                  <span>XSL</span><span>JavaScript</span>
+                  <span>HTML</span><span>CSS</span><span>jQuery</span>
+                </div>
+              </div>
+              <div class="actimize-sub">
+                <h5>RCM Designer</h5>
+                <div class="skill-chips">
+                  <span>Alert Types</span><span>Alert Fields</span>
+                  <span>Cases</span><span>Step Workflow</span>
+                </div>
+              </div>
+              <div class="actimize-sub">
+                <h5>ATCONE UI</h5>
+                <div class="skill-chips">
+                  <span>Alert UI</span><span>Cases UI</span>
+                  <span>RCM Plugin</span>
+                </div>
+              </div>
+              <div class="actimize-sub">
+                <h5>Linux Server</h5>
+                <div class="skill-chips">
+                  <span>Unix / Shell</span><span>Python</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- End-to-End Architecture Flow -->
+            <div class="actimize-arch">
+              <h5>End-to-End Architecture — SOAP Request → Actimize Stack</h5>
+              <div class="arch-flow" role="img" aria-label="Actimize end-to-end architecture: SOAP Request to AIS to UDM to RCM to ActOne">
+                <div class="arch-flow-node node-soap">
+                  <strong>SOAP Request</strong>
+                  <span>User / System Input</span>
+                </div>
+                <span class="arch-flow-arrow" aria-hidden="true">→</span>
+                <div class="arch-flow-node node-ais">
+                  <strong>AIS</strong>
+                  <span>Connector · Flow · Rules · UDF · Java Plugin</span>
+                </div>
+                <span class="arch-flow-arrow" aria-hidden="true">→</span>
+                <div class="arch-flow-node node-udm">
+                  <strong>UDM</strong>
+                  <span>Unified Data Management</span>
+                </div>
+                <span class="arch-flow-arrow" aria-hidden="true">→</span>
+                <div class="arch-flow-node node-rcm">
+                  <strong>RCM</strong>
+                  <span>Alert &amp; Case Workflow · Step Workflow · RCM Designer</span>
+                </div>
+                <span class="arch-flow-arrow" aria-hidden="true">→</span>
+                <div class="arch-flow-node node-act">
+                  <strong>ActOne</strong>
+                  <span>Alert UI · Cases UI · ATCONE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ EDUCATION ════════════════════════════════════════════════ -->
+    <section id="education" class="section bg-alt" aria-label="Education and certifications">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-tag">Academic &amp; Professional Credentials</p>
+          <h2>Education &amp; Certifications</h2>
+        </div>
+
+        <div class="edu-grid">
+          <div class="edu-card reveal">
+            <span class="edu-label">Doctoral Candidate</span>
+            <h3>Doctor of Information Technology</h3>
+            <p>University of the Cumberlands</p>
+            <span class="edu-year">2023 – Present</span>
+          </div>
+          <div class="edu-card reveal">
+            <span class="edu-label">Master's Degree</span>
+            <h3>M.S. Data Science</h3>
+            <p>University of North Texas</p>
+            <span class="edu-year">2021 – 2022 &nbsp;·&nbsp; GPA 3.6 / 4.0</span>
+          </div>
+          <div class="edu-card reveal">
+            <span class="edu-label">Bachelor's Degree</span>
+            <h3>B.Tech</h3>
+            <p>First Rank — 100% Merit Scholarship</p>
+            <span class="edu-year">Pre-2020</span>
+          </div>
+        </div>
+
+        <p class="section-tag cert-section-label reveal">Certifications &amp; Honors</p>
+
+        <div class="certs-grid">
+          <div class="cert-card reveal">
+            <div class="cert-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            </div>
+            <div><h4>AWS Certified Cloud Practitioner</h4><span>Amazon Web Services</span></div>
+          </div>
+          <div class="cert-card reveal">
+            <div class="cert-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            </div>
+            <div><h4>Microsoft Azure Data Fundamentals</h4><span>Microsoft Certified</span></div>
+          </div>
+          <div class="cert-card reveal">
+            <div class="cert-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div><h4>Employee of the Year</h4><span>Tata Consultancy Services</span></div>
+          </div>
+          <div class="cert-card reveal">
+            <div class="cert-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div><h4>IEEE SMC 2026 Peer Reviewer</h4><span>IEEE Systems, Man, and Cybernetics</span></div>
+          </div>
+          <div class="cert-card reveal">
+            <div class="cert-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <div><h4>ConnectSpend iOS App</h4><span>App Store — Mobile Development</span></div>
+          </div>
+          <div class="cert-card reveal">
+            <div class="cert-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div><h4>National Mathematics Olympiad</h4><span>Academic Excellence</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CONTACT ══════════════════════════════════════════════════ -->
+    <section id="contact" class="section" aria-label="Contact information">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-tag">Get In Touch</p>
+          <h2>Open to Senior Fraud ML, AML &amp; Data Science Roles</h2>
+        </div>
+        <div class="contact-layout">
+          <p class="contact-intro reveal">
+            Available for senior-level opportunities in fraud model development, AML/KYC systems,
+            ML engineering, and production AI in regulated financial environments.
+            Based in New Jersey, USA.
+          </p>
+          <div class="contact-links reveal">
+            <a href="mailto:jmaligireddy97@gmail.com" class="contact-item">
+              <span class="contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              jmaligireddy97@gmail.com
+              <span class="contact-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="https://www.linkedin.com/in/jalendarreddymaligireddy/" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <span class="contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </span>
+              linkedin.com/in/jalendar-reddy
+              <span class="contact-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+          <div class="contact-downloads reveal">
+            <a href="assets/Jalendar_Reddy_Senior_DS_Fraud_Model.pdf" download class="btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Resume PDF
+            </a>
+            <a href="assets/Jalendar_Reddy_Senior_DS_Fraud_Model.docx" download class="btn-secondary">Download DOCX</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Jalendar Reddy Maligireddy. Built as a professional portfolio for fraud ML, AML, AI/ML, iOS, and GitHub work.</p>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="nav-logo" aria-hidden="true">JR</div>
+          <span>Maligireddy Jalendar Reddy</span>
+        </div>
+        <p>Senior Data Scientist &amp; Fraud Model Developer &nbsp;·&nbsp; AML / KYC &nbsp;·&nbsp; ML Engineering &nbsp;·&nbsp; AWS Production</p>
+        <p class="footer-copy">© <span id="year"></span> Maligireddy Jalendar Reddy &nbsp;·&nbsp; New Jersey, USA</p>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>

@@ -3,15 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AML & Fraud Systems | Jalendar Reddy</title>
+  <title>AML &amp; Fraud Systems | Maligireddy Jalendar Reddy</title>
+  <meta name="description" content="Deep dive into AML, KYC, IFM-X, OFAC, WLF, LexisNexis, Actimize, SAR/FinCEN/CTR, and production fraud model risk workflows — Maligireddy Jalendar Reddy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .page-wrap { max-width: 860px; margin: 0 auto; padding: calc(var(--nav-h) + 3rem) var(--pad) 5rem; }
+    .page-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.85rem; font-weight: 600; color: var(--accent);
+      margin-bottom: 2rem; transition: opacity 0.2s;
+    }
+    .page-back:hover { opacity: 0.7; }
+    .page-label { font-size: 0.73rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.6rem; display: block; }
+    .page-wrap h1 { font-size: clamp(2rem, 4vw, 3rem); color: var(--t1); margin-bottom: 1rem; }
+    .page-wrap > p { font-size: 1.05rem; color: var(--t2); line-height: 1.8; margin-bottom: 2.5rem; max-width: 680px; }
+    .coming-card {
+      background: var(--surface); border: 1.5px dashed rgba(79,70,229,0.25);
+      border-radius: 16px; padding: 2.5rem; text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .coming-card h2 { font-size: 1.15rem; color: var(--t1); margin-bottom: 0.75rem; }
+    .coming-card p { font-size: 0.9rem; color: var(--t3); line-height: 1.7; max-width: 480px; margin: 0 auto 1.5rem; }
+    .topic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 2rem; text-align: left; }
+    .topic-item {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1rem;
+      font-size: 0.83rem; font-weight: 500; color: var(--t2);
+    }
+    .topic-item strong { display: block; font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
+  </style>
 </head>
-<body class="detail-page">
-  <main class="detail-shell">
-    <a class="back-link" href="../index.html#workstreams">Back to portfolio</a>
-    <p class="eyebrow">Future page</p>
-    <h1>AML & Fraud Systems</h1>
-    <p>Reserved for IFM-X, OFAC/WLF, KYC/CDD, Actimize, model risk, escalation workflow, and case-study content from verified materials.</p>
+<body>
+
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <div class="nav-logo">JR</div>
+        <span>Jalendar Reddy</span>
+      </a>
+      <div class="nav-end">
+        <a href="../index.html" class="nav-download">← Back to Portfolio</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-wrap">
+      <a href="../index.html#about" class="page-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Portfolio
+      </a>
+
+      <span class="page-label">Deep Dive</span>
+      <h1>AML &amp; Fraud Systems</h1>
+      <p>
+        Detailed case studies, model architectures, compliance workflows, and system designs
+        covering IFM-X transaction monitoring, OFAC/WLF sanctions screening, KYC/CDD frameworks,
+        Actimize AIS/RCM integration, SAR/FinCEN/CTR reporting, and production fraud model risk management.
+      </p>
+
+      <div class="coming-card">
+        <h2>Detailed Content Coming Soon</h2>
+        <p>
+          This page will include in-depth case studies, model risk documentation,
+          and technical deep-dives into AML/fraud systems built at Fiserv, Mukegroup, and TCS.
+          Content will be added progressively.
+        </p>
+        <a href="mailto:jmaligireddy97@gmail.com" class="btn-primary" style="width:fit-content;margin:0 auto;">
+          Request Information
+        </a>
+      </div>
+
+      <div class="topic-grid">
+        <div class="topic-item"><strong>Transaction Monitoring</strong>IFM-X end-to-end model lifecycle, precision/recall optimization</div>
+        <div class="topic-item"><strong>Sanctions Screening</strong>OFAC, WLF, LexisNexis real-time integration</div>
+        <div class="topic-item"><strong>KYC / CDD</strong>Customer due diligence framework, risk scoring</div>
+        <div class="topic-item"><strong>Actimize AIS/RCM</strong>Alert management, case workflow, dashboard reporting</div>
+        <div class="topic-item"><strong>SAR / CTR / FinCEN</strong>Regulatory reporting pipelines and automation</div>
+        <div class="topic-item"><strong>Graph Fraud Detection</strong>Account-to-principal networks, split transaction tracing</div>
+        <div class="topic-item"><strong>Synthetic Identity</strong>Detection patterns, ATO, first-party fraud signals</div>
+        <div class="topic-item"><strong>Model Risk Reviews</strong>Validation, escalation protocols, compliance sign-off</div>
+      </div>
+    </div>
   </main>
+
+  <footer class="footer" style="margin-top:0;">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand"><div class="nav-logo">JR</div><span>Maligireddy Jalendar Reddy</span></div>
+        <p class="footer-copy">© <span id="year"></span> Maligireddy Jalendar Reddy</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>var yr=document.getElementById('year');if(yr)yr.textContent=new Date().getFullYear();</script>
 </body>
 </html>
